@@ -8,18 +8,18 @@
 rustPlatform.buildRustPackage (finalAttrs: {
   pname = "zuban";
 
-  version = "0.0.21";
+  version = "0.0.22";
 
   src = fetchFromGitHub {
     owner = "zubanls";
     repo = "zuban";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-llAJwqJmOtauA7pi7dYZhVH0yFBNN65q2y8ecc9hAJY=";
+    hash = "sha256-gEABkRHp6idNrIQoA9x0Ak4e+WiRMmY/kTr77v3byrg=";
   };
 
   buildAndTestSubdir = "crates/zuban";
 
-  cargoHash = "sha256-sZFc+kjerR7a6JzVb0zQXCfYuJVNnoYUihgLd3qrDLM=";
+  cargoHash = "sha256-+sir/906kzH/Xc2+MnGXQPayIlowfR8nlXM+QNLI6IA=";
 
   nativeInstallCheckInputs = [
     versionCheckHook
@@ -35,8 +35,7 @@ rustPlatform.buildRustPackage (finalAttrs: {
   meta = {
     description = "Mypy-compatible Python Language Server built in Rust";
     homepage = "https://zubanls.com";
-    # There's no changelog file yet, but they post updates on their blog.
-    changelog = "https://zubanls.com/blog/";
+    changelog = "https://docs.zubanls.com/en/latest/changelog.html";
     license = lib.licenses.agpl3Only;
     maintainers = with lib.maintainers; [
       mcjocobe
