@@ -210,7 +210,6 @@ let
         in
         ''
           worker "${value.type}" {
-            type = "${value.type}";
             ${optionalString (value.enable != null)
               "enabled = ${if value.enable != false then "yes" else "no"};"
             }
