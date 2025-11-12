@@ -33,6 +33,7 @@ let
       sed -i -e "s|ruby 3.2.[0-9]\+p[0-9]\+|ruby ${ruby.version}|" Gemfile.lock
       sed -i -e "s|3.2.[0-9]\+|${ruby.version}|" .ruby-version
       ${jq}/bin/jq '. += {name: "Zammad", version: "${version}"}' package.json | ${moreutils}/bin/sponge package.json
+      substituteInPlace Gemfile.lock --replace "openssl (3.3.0)" "openssl (3.3.2)"
     '';
   };
 
